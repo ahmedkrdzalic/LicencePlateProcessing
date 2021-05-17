@@ -113,7 +113,7 @@ class MyWindow(QMainWindow):
             return text
 
         except:
-            print("can not scan!!", " - ", sys.exc_info())
+            print("can not scan!", " - ", sys.exc_info())
 
     def btnENTER_clicked(self):
         fileName= self.openFileNameDialog()
