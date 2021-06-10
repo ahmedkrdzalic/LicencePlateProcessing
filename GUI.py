@@ -1,10 +1,8 @@
 from PyQt5 import QtWidgets
-from PyQt5.QtWidgets import QApplication, QMainWindow, QApplication, QWidget, QInputDialog, QLineEdit, QFileDialog
-from PyQt5.QtGui import QIcon
+from PyQt5.QtWidgets import QMainWindow, QApplication, QLineEdit, QFileDialog
 from PyQt5.QtWidgets import QMessageBox
 import sys
 import mysql.connector
-import re
 
 import cv2
 import imutils
@@ -18,37 +16,42 @@ class MyWindow(QMainWindow):
         self.initUI()
 
     def initUI(self):
-        #DB connecting
+        # DB connecting
         self.DBconnect()
-        #Main window set
+        # Main window set
         self.setGeometry(700, 400, 400, 350)
         self.setWindowTitle("Licence Plate Pass")
-        self.setStyleSheet("background-color: #eae8e4;")
+        self.setStyleSheet("background-color: #ffffc7;")
+        # self.setTextColor("color: #233e8b;")
 
         self.btnENTER = QtWidgets.QPushButton(self)
         self.btnENTER.setText("ENTER")
+        self.btnENTER.setStyleSheet("background-color: #a9f1df;")
         self.btnENTER.clicked.connect(self.btnENTER_clicked)
         self.btnENTER.move(150, 100)
 
         self.btnEXIT = QtWidgets.QPushButton(self)
         self.btnEXIT.setText("EXIT")
+        self.btnEXIT.setStyleSheet("background-color: #a9f1df;")
         self.btnEXIT.clicked.connect(self.btnEXIT_clicked)
         self.btnEXIT.move(150, 150)
 
         self.btnOVERRIDE = QtWidgets.QPushButton(self)
         self.btnOVERRIDE.setText("Override")
+        self.btnOVERRIDE.setStyleSheet("background-color: #a9f1df;")
         self.btnOVERRIDE.clicked.connect(self.btnOVERRIDE_clicked)
         self.btnOVERRIDE.move(280, 300)
 
         self.textbox = QLineEdit(self)
         self.textbox.move(20, 270)
-        #self.textbox.resize(280, 40)
-        self.textbox.setStyleSheet("background-color: white;")
+        # self.textbox.resize(280, 40)
+        self.textbox.setStyleSheet("background-color: #a9f1df;")
         self.textbox.setPlaceholderText('Registration/Plates')
         self.textbox.setFocus()
 
         self.btnPAY = QtWidgets.QPushButton(self)
         self.btnPAY.setText("PAY")
+        self.btnPAY.setStyleSheet("background-color: #a9f1df;")
         self.btnPAY.clicked.connect(self.btnPAY_clicked)
         self.btnPAY.move(20, 300)
 
